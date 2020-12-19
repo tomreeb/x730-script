@@ -86,3 +86,6 @@ KillMode=process
 [Install]
 WantedBy=multi-user.target
 " > /etc/systemd/system/x730pwr.service
+
+systemctl daemon-reload
+systemctl enable x730pwr.service --now
