@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# Check if run as root
+if [ "$(whoami)" != "root" ] ; then
+	echo "This script must be run as sudo/root"
+	exit 1
+fi
+
 #x730 Powering on /reboot /shutdown from hardware
 
 echo '#!/bin/bash
