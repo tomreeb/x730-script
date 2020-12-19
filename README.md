@@ -5,12 +5,15 @@ This is a fork of the safe shutdown script for x730 from [Geekworm](https://gith
 ## Installation
 
 One-liner:
+
 `wget https://raw.githubusercontent.com/tomreeb/x730-script/master/x730.sh | xargs sudo bash`
 
 Even though it's easy, you should not run that command above. Instead, download the script and review it before executing it:
 
 `wget https://raw.githubusercontent.com/tomreeb/x730-script/master/x730.sh`
+
 `sudo chmod +x x730.sh`
+
 `sudo ./x730.sh`
 
 When the install is finished, reload your bash session.
