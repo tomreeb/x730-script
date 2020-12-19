@@ -37,9 +37,8 @@ while [ 1 ]; do
     fi
   fi
 done' > /usr/local/bin/x730pwr.sh
-sudo chmod +x /usr/local/bin/x730pwr.sh
 
-
+chmod +x /usr/local/bin/x730pwr.sh
 
 #X730 full shutdown through Software
 
@@ -65,7 +64,7 @@ echo "X730 Shutting down..."
 echo "0" > /sys/class/gpio/gpio$BUTTON/value
 ' > /usr/local/bin/x730shutdown.sh
 
-sudo chmod +x /usr/local/bin/x730shutdown.sh
+chmod +x /usr/local/bin/x730shutdown.sh
 
 # Systemd Install Script
 
@@ -89,3 +88,8 @@ WantedBy=multi-user.target
 
 systemctl daemon-reload
 systemctl enable x730pwr.service --now
+
+# Setup bash alias for software shutdown
+
+echo "alias shutdown='/usr/local/binx730shutdown.sh'
+" > /etc/profile.d/00-aliases.sh
