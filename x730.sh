@@ -1,5 +1,5 @@
-#x730 Powering on /reboot /shutdown from hardware
 #!/bin/bash
+#x730 Powering on /reboot /shutdown from hardware
 
     sudo sed -e '/shutdown/ s/^#*/#/' -i /etc/rc.local
 
