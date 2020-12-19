@@ -44,8 +44,6 @@ sudo sed -i '$ i /etc/x730pwr.sh &' /etc/rc.local
 #!/bin/bash
 #X730 full shutdown through Software
 
-    sudo sed -e '/button/ s/^#*/#/' -i /etc/rc.local
-
     echo '#!/bin/bash
 
 BUTTON=18
