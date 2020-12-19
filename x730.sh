@@ -1,7 +1,7 @@
 #!/bin/bash
 #x730 Powering on /reboot /shutdown from hardware
 
-    echo '#!/bin/bash
+echo '#!/bin/bash
 
 SHUTDOWN=4
 REBOOTPULSEMINIMUM=200
@@ -36,15 +36,14 @@ while [ 1 ]; do
       exit
     fi
   fi
-done' > /etc/x730pwr.sh
-sudo chmod +x /etc/x730pwr.sh
-sudo sed -i '$ i /etc/x730pwr.sh &' /etc/rc.local 
+done' > /usr/local/bin/x730pwr.sh
+sudo chmod +x /usr/local/bin/x730pwr.sh
 
 
-#!/bin/bash
+
 #X730 full shutdown through Software
 
-    echo '#!/bin/bash
+echo '#!/bin/bash
 
 BUTTON=18
 
@@ -65,4 +64,25 @@ echo "X730 Shutting down..."
 #restore GPIO 18
 echo "0" > /sys/class/gpio/gpio$BUTTON/value
 ' > /usr/local/bin/x730shutdown.sh
+
 sudo chmod +x /usr/local/bin/x730shutdown.sh
+
+# Systemd Install Script
+
+echo "#!/bin/bash
+[Unit]
+Description=Geekworm x730 Power Management Script
+
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/x730pwr.sh
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+" > /etc/systemd/system/x730pwr.service
