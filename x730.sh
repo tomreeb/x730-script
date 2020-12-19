@@ -1,8 +1,6 @@
 #!/bin/bash
 #x730 Powering on /reboot /shutdown from hardware
 
-    sudo sed -e '/shutdown/ s/^#*/#/' -i /etc/rc.local
-
     echo '#!/bin/bash
 
 SHUTDOWN=4
@@ -43,8 +41,8 @@ sudo chmod +x /etc/x730pwr.sh
 sudo sed -i '$ i /etc/x730pwr.sh &' /etc/rc.local 
 
 
-#X730 full shutdown through Software
 #!/bin/bash
+#X730 full shutdown through Software
 
     sudo sed -e '/button/ s/^#*/#/' -i /etc/rc.local
 
