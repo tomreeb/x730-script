@@ -98,5 +98,5 @@ systemctl enable x735pwr.service --now
 
 # Setup bash alias for software shutdown
 
-echo "alias shutdown='/usr/local/binx735shutdown.sh'
+echo "alias shutdown='/usr/local/bin/x735shutdown.sh'
 " > /etc/profile.d/00-aliases.sh
