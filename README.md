@@ -1,6 +1,6 @@
 # x735-script
 
-This is a fork of the safe shutdown script for x735 from [Geekworm](https://github.com/geekworm-com/x735-script). This has been modified to be compatible with x735 on Ubuntu 20.04. The main difference is this script uses systemd in favor of rc.local.
+This is a fork of the safe shutdown script for x730 from [Geekworm](https://github.com/geekworm-com/x735-script). This has been modified to be compatible with x735 on Ubuntu 20.04. The main difference is this script uses systemd in favor of rc.local.
 
 ## Installation
 
